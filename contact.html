@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuroTech UIUC | Contact</title>
+
+  <style>
+    /* ========================
+       🔧 Reset & Base
+       Uses the site-wide theme vars from styles.css:
+       --bg, --text, --text-muted, --rose, --accent, etc.
+    ======================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-y: auto;
+    }
+
+    /* ========================
+       🧭 Navbar
+    ======================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(22, 21, 23, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      color: var(--text);
+    }
+
+    .logo {
+      height: 40px;
+      filter: drop-shadow(0 0 10px rgba(233,205,209,.15));
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,.82);
+      font-weight: 500;
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--rose);
+      text-shadow: 0 0 12px rgba(233,205,209,.25);
+    }
+
+    /* ========================
+       💌 Contact Section
+    ======================== */
+    #contact-section {
+      margin-top: 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    h2.page-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      background: linear-gradient(90deg, var(--rose), var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 24px rgba(233,205,209,.10);
+    }
+
+    .contact-form {
+      width: 90%;
+      max-width: 700px;
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(103,148,161,.08));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: var(--rose);
+      letter-spacing: .2px;
+    }
+
+    input, select, textarea {
+      padding: 0.85rem 0.9rem;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-size: 1rem;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(255,255,255,.45);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: rgba(233,205,209,.35);
+      box-shadow: 0 0 0 4px rgba(233,205,209,.10);
+      background: rgba(255,255,255,.08);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      background: linear-gradient(90deg, var(--rose), var(--accent));
+      color: #0f0f12;
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 0.95rem 1.5rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 800;
+      transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+      width: 100%;
+      margin-top: 0.5rem;
+      box-shadow: 0 12px 35px rgba(103,148,161,.20);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow: 0 16px 45px rgba(103,148,161,.26);
+    }
+
+    .contact-list {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .contact-list h3 {
+      color: var(--rose);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      text-shadow: 0 0 14px rgba(233,205,209,.12);
+    }
+
+    .contact-item {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .contact-item strong {
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      color: rgba(255,255,255,.60);
+      font-size: 0.9rem;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    /* ========================
+       ✅ Success Popup
+    ======================== */
+    .success-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(22, 21, 23, 0.92);
+      border: 1px solid rgba(233,205,209,.35);
+      padding: 1.5rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(233,205,209,.18), 0 18px 60px rgba(0,0,0,.45);
+      color: var(--text);
+      font-size: 1.1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      z-index: 999;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .success-popup.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .link-highlight {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .link-highlight:hover {
+      color: var(--rose);
+      text-shadow: 0 0 10px rgba(233,205,209,.25);
+    }
+  </style>
+
+  <!-- IMPORTANT: this assumes you already link styles.css somewhere globally.
+       If this page doesn't already, add:
+       <link rel="stylesheet" href="styles.css" />
+  -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- 🔹 Navbar -->
+  <nav class="navbar">
+    <img src="assets/logo.png" alt="NeuroTech Logo" class="logo" />
+    <h3>NeuroTech at UIUC</h3>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="mnc.html">NeuroHack</a></li>
+      <li><a href="join.html">Join</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✉️ Contact Section -->
+  <main id="contact-section">
+    <h2 class="page-title">Contact Us</h2>
+
+    <form
+      class="contact-form"
+      id="contactForm"
+      action="https://formspree.io/f/movpavzl"
+      method="POST"
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select name="type" id="type" required>
+          <option value="">Select...</option>
+          <option>Company</option>
+          <option>Organization/Lab</option>
+          <option>Individual</option>
+          <option>NTX Chapter</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Your Contact Info (Email or Phone)</label>
+        <input type="text" name="contact" id="contact" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- 📞 Contact List -->
+    <div class="contact-list">
+      <h2>Project Manager Contacts</h2>
+      <h3>
+        can be found on our
+        <a href="projects.html" class="link-highlight">Projects</a> page!
+      </h3>
+    </div>
+
+    <footer>
+      <p>NeuroTech UIUC © 2025 | Messages sent via secure form</p>
+    </footer>
+  </main>
+
+  <!-- ✅ Success Popup -->
+  <div id="successPopup" class="success-popup">
+    ✅ Message sent successfully!<br>
+    Thank you for reaching out to NeuroTech.
+  </div>
+
+  <!-- 💡 Script -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const popup = document.getElementById("successPopup");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        popup.classList.add("show");
+        form.reset();
+
+        setTimeout(() => {
+          popup.classList.remove("show");
+        }, 4000);
+      } else {
+        alert("❌ There was an error sending your message. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
