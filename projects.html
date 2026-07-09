@@ -149,6 +149,26 @@
       box-shadow: 0 26px 65px rgba(103,148,161,.25);
     }
 
+    .project-img.project-placeholder {
+      background:
+        linear-gradient(135deg, rgba(233,205,209,.16), rgba(103,148,161,.24)),
+        rgba(255,255,255,.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      filter: none;
+    }
+
+    .project-img.project-placeholder::before {
+      content: attr(data-project);
+      color: rgba(255,255,255,.86);
+      font-size: clamp(1.6rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
     /* ==== TEXT ==== */
     .project-content {
       flex: 1 1 45%;
@@ -266,37 +286,35 @@
       <p>Discover our interdisciplinary teams driving innovation in neurotechnology.</p>
     </section>
 
-    <!-- PROJECT TEMPLATE -->
+    <!-- PROJECTS -->
     <section class="project-section">
       <div class="project-img" style="background-image: url('assets/brainstorm_pms.jpg');"></div>
       <div class="project-content">
         <h2 class="project-title">Attune</h2>
         <p class="credits">Project Managers: Rushil Shah, Addison Torgerson</p>
-        <p class="about">Developing an affordable VR-EEG system for accessible neurofeedback therapy targeting ADHD and focus improvement through deep learning and interactive design.</p>
-        <a class="email" href="mailto:rushils4@illinois.edu">rushils4@illinois.edu</a>
-        <a class="email" href="mailto:art12@illinois.edu">art12@illinois.edu</a>
+        <p class="about"><strong>Focus:</strong> Develops accessible neurofeedback therapy that provides mental state insights through an engaging user experience.</p>
+        <a class="email" href="mailto:rushil@attuneneurofeedback.com">rushil@attuneneurofeedback.com</a>
+        <a class="email" href="mailto:addison@attuneneurofeedback.com">addison@attuneneurofeedback.com</a>
       </div>
     </section>
 
     <section class="project-section">
       <div class="project-img" style="background-image: url('assets/IMG_0DF3498D90AA-1.jpeg');"></div>
       <div class="project-content">
-        <h2 class="project-title">Brainwaves</h2>
-        <p class="credits">Project Managers: Ruchi Prakash, Hridik Hingorani </p>
-        <p class="about">Using podcasts and social media to make neurotechnology education accessible and engaging for a global audience.</p>
-        <a class="email" href="mailto:ruchip2@illinois.edu">ruchip2@illinois.edu</a>
-        <a class="email" href="mailto:hridkh2@illinois.edu">ruchip2@illinois.edu</a>
+        <h2 class="project-title">BrainWaves</h2>
+        <p class="credits">Project Manager: Hridik Hingorani</p>
+        <p class="about"><strong>Focus:</strong> Produces podcasts and educational media to make neurotechnology accessible to a broader audience.</p>
+        <p class="email">—</p>
       </div>
     </section>
 
     <section class="project-section">
       <div class="project-img" style="background-image: url('assets/NewCortexCodec.png');"></div>
       <div class="project-content">
-        <h2 class="project-title">CortexCodec</h2>
-        <p class="credits">Project Managers: Grace He, Tanisha Mandal</p>
-        <p class="about">Classifying emotions from EEG data using data processing and machine learning to improve accessibility of wellness therapy.</p>
-        <a class="email" href="mailto:gracehe3@illinois.edu">gracehe3@illinois.edu</a>
-        <a class="email" href="mailto:mandal7@illinois.edu">mandal7@illinois.edu</a>
+        <h2 class="project-title">Cortex Codec</h2>
+        <p class="credits">Project Managers: Nishita Paruchuri, Veda Fernandes</p>
+        <p class="about"><strong>Focus:</strong> Uses EEG signal processing and machine learning to decode emotions and music-related brain activity.</p>
+        <p class="email">—</p>
       </div>
     </section>
 
@@ -314,10 +332,9 @@
       <div class="project-img" style="background-image: url('assets/neurify.jpg');"></div>
       <div class="project-content">
         <h2 class="project-title">Neurify</h2>
-        <p class="credits">Project Managers: Sam Kim, Isabella Machaj</p>
-        <p class="about">Customizing song playback queues with real-time EEG emotion and focus classification.</p>
-        <a class="email" href="mailto:samuel57@illinois.edu">samuel57@illinois.edu</a>
-        <a class="email" href="mailto:imach2@illinois.edu">imach2@illinois.edu</a>
+        <p class="credits">Project Manager: Brandon Cardozo</p>
+        <p class="about"><strong>Focus:</strong> Builds a web application that recommends Spotify songs based on a user's mental state using EEG and machine learning.</p>
+        <p class="email">—</p>
       </div>
     </section>
 
@@ -325,21 +342,19 @@
       <div class="project-img" style="background-image: url('assets/neurobot.JPG');"></div>
       <div class="project-content">
         <h2 class="project-title">NeuroBot</h2>
-        <p class="credits">Project Managers: Moukthika Nellutla, Tanvi Kurundkar, Pari Kulkarni</p>
-        <p class="about">Building an EEG-driven chatbot capable of recognizing emotional states and recommending personalized self-regulation actions.</p>
+        <p class="credits">Project Managers: Moukthika Nellutla, Tanvi Kurundkar</p>
+        <p class="about"><strong>Focus:</strong> Uses EEG data to detect emotions and power a chatbot that recommends personalized wellness actions.</p>
         <a class="email" href="mailto:mn38@illinois.edu">mn38@illinois.edu</a>
-        <a class="email" href="mailto:tanvirk3@illinois.edu">tanvirk3@illinois.edu</a>
-        <a class="email" href="mailto:pari5@illinois.edu">pari5@illinois.edu</a>
       </div>
     </section>
 
     <section class="project-section">
       <div class="project-img" style="background-image: url('assets/marketing.JPG');"></div>
       <div class="project-content">
-        <h2 class="project-title">Neuromarketing</h2>
-        <p class="credits">Project Manager: Alexia Rendon</p>
-        <p class="about">Evaluating how advertisements impact attention and emotion using neurophysiological tools and eye-tracking interfaces.</p>
-        <a class="email" href="mailto:arend4@illinois.edu">arend4@illinois.edu</a>
+        <h2 class="project-title">Neuromarketing: Emotional Recognition</h2>
+        <p class="credits">Project Managers: Ocean Ng, Aditi Cherukuri</p>
+        <p class="about"><strong>Focus:</strong> Uses EEG signals and machine learning to classify and analyze emotional responses.</p>
+        <p class="email">—</p>
       </div>
     </section>
 
@@ -347,10 +362,9 @@
       <div class="project-img" style="background-image: url('assets/IMG_7666.jpg');"></div>
       <div class="project-content">
         <h2 class="project-title">NeuroWalker</h2>
-        <p class="credits">Project Managers: Caroline Liu, Nathan Magsino</p>
-        <p class="about">Creating an immersive VR platform for visualizing neural pathways and structures to enhance neuroscience education.</p>
-        <a class="email" href="mailto:cal12@illinois.edu">cal12@illinois.edu</a>
-        <a class="email" href="mailto:nmags@illinois.edu">nmags@illinois.edu</a>
+        <p class="credits">Project Managers: Abhay Nagaraj, Maple Fan</p>
+        <p class="about"><strong>Focus:</strong> Develops a VR tool that helps students visualize and learn 3D neural anatomy.</p>
+        <p class="email">—</p>
       </div>
     </section>
 
@@ -358,9 +372,69 @@
       <div class="project-img" style="background-image: url('assets/codingimage.jpg');"></div>
       <div class="project-content">
         <h2 class="project-title">Research & Apply</h2>
-        <p class="credits">Project Manager: Abhinav Bachu</p>
-        <p class="about">Developing computational and physical neuroprosthetic prototypes addressing rehabilitation and motion feedback challenges.</p>
-        <a class="email" href="mailto:abach8@illinois.edu">abach8@illinois.edu</a>
+        <p class="credits">Project Manager: Aryan</p>
+        <p class="about"><strong>Focus:</strong> Researches neurophysiology challenges to develop computational and hardware-based neurotechnology solutions.</p>
+        <p class="email">—</p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-img project-placeholder" data-project="NeuroRover"></div>
+      <div class="project-content">
+        <h2 class="project-title">NeuroRover</h2>
+        <p class="credits">Project Managers: Agniva Chaudhuri, Atchaya Muthupalaniappan</p>
+        <p class="about"><strong>Focus:</strong> Uses EMG signals to control a rover in real time for neurorobotics applications.</p>
+        <a class="email" href="mailto:agnivac2@illinois.edu">agnivac2@illinois.edu</a>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-img project-placeholder" data-project="OpenTFUS"></div>
+      <div class="project-content">
+        <h2 class="project-title">OpenTFUS</h2>
+        <p class="credits">Project Manager: Samir Mohammad</p>
+        <p class="about"><strong>Focus:</strong> Develops open-source tools for transcranial focused ultrasound (tFUS), a non-invasive brain stimulation technology.</p>
+        <a class="email" href="mailto:smoha95@illinois.edu">smoha95@illinois.edu</a>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-img project-placeholder" data-project="ThewBand"></div>
+      <div class="project-content">
+        <h2 class="project-title">ThewBand</h2>
+        <p class="credits">Project Managers: Ellen Hsuan, Evan Sun*</p>
+        <p class="about"><strong>Focus:</strong> Develops a wearable EMG device that measures muscle load capacity while integrating LLM technology for consumer neurotechnology.</p>
+        <a class="email" href="mailto:ehsua@illinois.edu">ehsua@illinois.edu</a>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-img project-placeholder" data-project="NeuroMed"></div>
+      <div class="project-content">
+        <h2 class="project-title">NeuroMed</h2>
+        <p class="credits">Project Manager: Anmita Avirneni</p>
+        <p class="about"><strong>Focus:</strong> Develops a computational model that uses biomarkers to improve depression diagnosis.</p>
+        <a class="email" href="mailto:aavir@illinois.edu">aavir@illinois.edu</a>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-img project-placeholder" data-project="Brain2Image"></div>
+      <div class="project-content">
+        <h2 class="project-title">Brain2Image</h2>
+        <p class="credits">Project Managers: Krrish Ganesh, Abhiraj Bhashkar</p>
+        <p class="about"><strong>Focus:</strong> Reconstructs visual imagery from processed EEG signals to advance brain-computer interface research.</p>
+        <a class="email" href="mailto:krrishg2@illinois.edu">krrishg2@illinois.edu</a>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-img project-placeholder" data-project="MindScents"></div>
+      <div class="project-content">
+        <h2 class="project-title">MindScents</h2>
+        <p class="credits">Project Manager: Ke Zhang</p>
+        <p class="about"><strong>Focus:</strong> Builds and tests an EEG-based brain-computer interface system using signal processing and experimental design.</p>
+        <a class="email" href="mailto:kezhang6@illinois.edu">kezhang6@illinois.edu</a>
       </div>
     </section>
   </main>

@@ -93,6 +93,13 @@
     -webkit-text-fill-color:transparent;
     text-shadow: 0 0 30px rgba(233,205,209,.08);
   }
+  .hero-club-logo{
+    display: block;
+    width: min(520px, 78vw);
+    height: auto;
+    margin: 0 auto 2rem;
+    filter: drop-shadow(0 18px 45px rgba(0,0,0,.28));
+  }
   .hero-about p{
     max-width:850px;
     margin:0 auto;
@@ -294,6 +301,7 @@
     .nav-links{gap:1rem;}
     .who-we-are{grid-template-columns:1fr; padding-top:4rem;}
     .hero-about h1{font-size:2.2rem;}
+    .hero-club-logo{width:min(360px, 82vw);}
     .hero-about p{font-size:1rem;}
   }
   /* =========================
@@ -301,10 +309,10 @@
    ========================= */
 
 :root{
-  --illini-orange: #8F7DA1(211, 93%, 59%);
+  --illini-orange: var(--lavender);
   --illini-blue: #13294b;
-  --card-bg: #8F7DA1(255,255,255,0.06);
-  --card-border: #8F7DA1(255,255,255,0.12);
+  --card-bg: rgba(255,255,255,0.06);
+  --card-border: rgba(255,255,255,0.12);
 }
 
 /* widen the who-we-are text since we removed the brain */
@@ -356,6 +364,19 @@
   gap: 18px;
 }
 
+.team-group-title{
+  grid-column: 1 / -1;
+  margin: 22px 0 2px;
+  color: var(--rose);
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.team-group-title:first-child{
+  margin-top: 0;
+}
+
 /* card */
 .team-card{
   grid-column: span 6;
@@ -385,14 +406,30 @@
   height: 140px;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #8F7DA1(255, 255, 255, 0.14);
-  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(233,205,209,0.22), rgba(103,148,161,0.28)),
+    rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  color: rgba(255,255,255,0.88);
 }
 .team-photo img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   display:block;
+}
+
+.team-photo--placeholder span{
+  max-width: 100%;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 /* content */
@@ -415,6 +452,13 @@
   font-size: 1.05rem;
   margin: 0;
   letter-spacing: 0.2px;
+}
+
+.team-name{
+  margin: 0 0 4px;
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .team-badge{
