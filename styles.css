@@ -93,13 +93,6 @@
     -webkit-text-fill-color:transparent;
     text-shadow: 0 0 30px rgba(233,205,209,.08);
   }
-  .hero-club-logo{
-    display: block;
-    width: min(520px, 78vw);
-    height: auto;
-    margin: 0 auto 2rem;
-    filter: drop-shadow(0 18px 45px rgba(0,0,0,.28));
-  }
   .hero-about p{
     max-width:850px;
     margin:0 auto;
@@ -301,7 +294,6 @@
     .nav-links{gap:1rem;}
     .who-we-are{grid-template-columns:1fr; padding-top:4rem;}
     .hero-about h1{font-size:2.2rem;}
-    .hero-club-logo{width:min(360px, 82vw);}
     .hero-about p{font-size:1rem;}
   }
   /* =========================
@@ -413,7 +405,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
   text-align: center;
   color: rgba(255,255,255,0.88);
 }
@@ -422,6 +413,10 @@
   height: 100%;
   object-fit: cover;
   display:block;
+}
+
+.team-photo--placeholder{
+  padding: 12px;
 }
 
 .team-photo--placeholder span{
