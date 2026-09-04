@@ -162,6 +162,14 @@
       padding: 0.5rem;
     }
 
+    .qr-container img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
     .link-btn {
       display: inline-block;
       margin-top: 1rem;
@@ -209,7 +217,7 @@
     <h2>Become a part of the next generation of innovators bridging neuroscience and technology</h2>
 
     <a
-      href="https://forms.gle/a8H9uC57zzDrPLwD7"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSeR9StXPV43Tf0cDjZZSIs6jv2UcfBR_XcqKvbeRWPVGdhoaw/viewform?fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAad3FQUcX2rvdRzLLN_d1B1vibaMe9mdrzqcKaLj6c5WJxTRlCCiomjPvJd5oA_aem_HzhPc2JKQ9c8JdGgwSYWsA"
       target="_blank"
       class="cta-btn"
     >
@@ -233,9 +241,11 @@
       <!-- Discord -->
       <div class="join-card">
         <h3>Join our Discord</h3>
-        <div class="qr-container" id="discordQR"></div>
+        <div class="qr-container">
+          <img src="assets/discord-qr.png" alt="QR code to join the NeuroTechX@UIUC Discord" />
+        </div>
         <a
-          href="https://discord.gg/zJEGPVQh"
+          href="https://discord.gg/AnX4A3EX6"
           target="_blank"
           class="link-btn"
         >
@@ -247,8 +257,6 @@
 
   <script>
     const instagramURL = "https://www.instagram.com/neurotechx.uiuc/";
-    const discordURL = "https://discord.gg/zJEGPVQh";
-
     new QRCode(document.getElementById("instaQR"), {
       text: instagramURL,
       width: 150,
@@ -257,13 +265,6 @@
       colorLight: "#161517",
     });
 
-    new QRCode(document.getElementById("discordQR"), {
-      text: discordURL,
-      width: 150,
-      height: 150,
-      colorDark: "#6794A1",
-      colorLight: "#161517",
-    });
   </script>
 </body>
 </html>
